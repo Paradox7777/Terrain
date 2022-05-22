@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    public float speed = 2f;
+    private float rotationSpeed = 10f;
+    private float speed = 2f;
+    
     private Rigidbody rb;
     private Animator animator;
-    [SerializeField]
-    public float rotationSpeed = 10f;
-    void Start()
+    
+    private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    private void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");

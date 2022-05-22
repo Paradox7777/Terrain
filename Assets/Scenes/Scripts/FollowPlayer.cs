@@ -3,14 +3,13 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
 	[SerializeField]
-	public float mouseSens = 100f;
-	[SerializeField]
 	public Transform playerBody;
+	
+	private float mouseSens = 100f;
+	private float xRotation;
 
-	private float xRotation = 0f;
 
-
-	void Update()
+	private void Update()
 	{
 		float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
 		float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
